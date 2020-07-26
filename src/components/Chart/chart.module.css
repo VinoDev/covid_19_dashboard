@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.chart{
+    height: 50vh;
+    width: 65%;
+}
+
+@media only screen and (max-width: 770px) {
+    .chart{
+        width: 100%;
+    }
+}
