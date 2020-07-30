@@ -68,8 +68,14 @@ export const Chart = ({data: {data: {confirmed, deaths, recovered}, country}}) =
                     },
                     { 
                         data: dailyGlobalData.map((data)=>data.deaths),
-                        label: 'deaths',
+                        label: 'Deaths',
                         borderColor: 'rgba(0, 0, 0, 0.5)',
+                        fill: true
+                    },
+                    {
+                        data: dailyGlobalData.map((data)=>data.deltaConfirmed),
+                        label: 'New Cases',
+                        borderColor: 'rgba(0, 0, 255, 0.5)',
                         fill: true
                     }]
                 }}
@@ -87,7 +93,8 @@ export const Chart = ({data: {data: {confirmed, deaths, recovered}, country}}) =
                     tooltips: {
                         callbacks: {
                             label: function(tooltipItems, data){
-                                return data.datasets[tooltipItems.datasetIndex].label + ": " + data.datasets[0].data[tooltipItems.index].toLocaleString();
+                                console.log(data);
+                                return data.datasets[tooltipItems.datasetIndex].label + ": " + data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index].toLocaleString();
                             }
                         }
                     }

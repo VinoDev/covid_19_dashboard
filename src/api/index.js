@@ -21,8 +21,9 @@ export const fetchData = async (country) => {
 export const fetchDailyGlobal = async () => {
     try {
         const data = await fetch(`${url}/daily`).then(res=>res.json());
+        console.log(data);
         const modifiedData = data.map(
-            ({totalConfirmed, deaths, reportDate})=>{return {totalConfirmed, deaths: deaths.total, reportDate}}
+            ({totalConfirmed, deltaConfirmed, deaths, reportDate})=>{return {totalConfirmed, deltaConfirmed, deaths: deaths.total, reportDate}}
         )
         return modifiedData
     } catch (error) {
