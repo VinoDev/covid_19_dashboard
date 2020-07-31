@@ -97,6 +97,11 @@ export const Chart = ({data: {data: {confirmed, deaths, recovered}, country}}) =
                                 return data.datasets[tooltipItems.datasetIndex].label + ": " + data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index].toLocaleString();
                             }
                         }
+                    },
+                    legend: {
+                        labels: {
+                            boxWidth: 20
+                        }
                     }
                 }}
             />
